@@ -197,51 +197,52 @@
 <div class="flex flex-col">
 	<section class="pb-40">
 		<div class="pt-12 text-center">
-			<h1 class="sm:text-8xl text-6xl mt-6 marck-script">ClassQuiz</h1>
+			<h1 class="sm:text-8xl text-6xl mt-24 marck-script">ClassQuiz</h1>
 			<p class="text-xl mt-4">{$t('index_page.slogan')}</p>
 		</div>
 	</section>
-	<section>
+	<section class="max-w-screen-lg mx-auto">
 		<h2 class="text-center text-5xl mb-6">How does ClassQuiz even work?</h2>
 
 		<div class="flex justify-center w-full">
-			<h3 class="text-center text-3xl rounded-t-lg bg-opacity-40 bg-white py-2 px-6">
+			<h3 class="text-center text-3xl py-2 px-6 bg-white bg-opacity-40 dark:bg-opacity-30 rounded-full border-black dark:border-white border">
 				{$t('index_page.get_a_quiz')}
 			</h3>
 		</div>
 		<div
-			class="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 bg-opacity-40 bg-white shadow-lg mb-12 lg:mx-12 mx-4 rounded-lg"
+			class="grid grid-rows-2 items-center lg:grid-rows-1 lg:grid-cols-2 mb-12 lg:mx-12 mx-4 rounded-lg"
 		>
-			<div>
+			<div class="p-4">
 				<div class="p-2 rounded-lg">
 					{#if selected_create_thing === SelectedCreateThing.Create}
 						<img
-							class="rounded-lg relative"
+							class="rounded-lg relative shadow-xl border border-black dark:border-white"
 							src={EditScreenshot}
 							in:fade
 							alt="Screenshot of the import-page showing an URL to Kahoot! entered"
 						/>
 					{:else if selected_create_thing === SelectedCreateThing.Find}
 						<img
-							class="rounded-lg relative"
+							class="rounded-lg relative shadow-xl border border-black dark:border-white"
 							src={FindScreenshot}
 							in:fade
 							alt="Screenshot of the search-page showing one found quiz for the term 'Country'"
 						/>
 					{:else if selected_create_thing === SelectedCreateThing.Import}
 						<img
-							class="rounded-lg relative"
+							class="rounded-lg relative shadow-xl border border-black dark:border-white"
 							src={ImportScreenshot}
 							in:fade
 							alt="Screenshot of the import-page showing an URL to Kahoot! entered"
 						/>
 					{:else}
 						<p>Shouldn't happen!</p>
+						<!-- lmao -->
 					{/if}
 				</div>
 			</div>
 			<div
-				class="lg:border-l lg:border-l-black lg:border-t-0 border-t border-t-black flex lg:flex-col flex-row stretch"
+				class="lg:border-l lg:border-l-black dark:lg:border-l-white lg:border-t-0 border-t dark:border-t-white border-t-black flex lg:flex-col flex-row stretch p-4"
 			>
 				<div
 					class="m-2 rounded-lg p-2 bg-opacity-40 bg-white transition-all cursor-pointer lg:h-full"
@@ -251,6 +252,7 @@
 					class:shadow-2xl={selected_create_thing === SelectedCreateThing.Create}
 					class:opacity-70={selected_create_thing !== SelectedCreateThing.Create}
 				>
+				<div class="flex flex-row items-center gap-2 mb-2">
 					<div
 						class="rounded-lg bg-emerald-300 w-fit p-1 bg-lime-500 hover:bg-lime-400 transition shadow-lg"
 					>
@@ -270,7 +272,8 @@
 							/>
 						</svg>
 					</div>
-					<h5 class="text-xl w-fit dark:text-black">{$t('words.create')}</h5>
+					<h5 class="text-xl w-fit font-bold dark:text-black">{$t('words.create')}</h5>
+					</div>
 					<p class="dark:text-black">{$t('index_page.create_a_quiz_from_scratch')}</p>
 				</div>
 				<div
@@ -281,6 +284,8 @@
 					class:shadow-2xl={selected_create_thing === SelectedCreateThing.Find}
 					class:opacity-70={selected_create_thing !== SelectedCreateThing.Find}
 				>
+				<div class="flex flex-row items-center gap-2 mb-2">
+
 					<div
 						class="rounded-lg bg-emerald-300 w-fit p-1 bg-lime-500 hover:bg-lime-400 transition shadow-lg"
 					>
@@ -300,7 +305,8 @@
 							/>
 						</svg>
 					</div>
-					<h5 class="text-xl dark:text-black">{$t('words.find')}</h5>
+					<h5 class="text-xl w-fit font-bold dark:text-black">{$t('words.find')}</h5>
+					</div>
 					<p class="dark:text-black">{$t('index_page.find_or_explore')}</p>
 				</div>
 				<div
@@ -311,6 +317,8 @@
 					class:shadow-2xl={selected_create_thing === SelectedCreateThing.Import}
 					class:opacity-70={selected_create_thing !== SelectedCreateThing.Import}
 				>
+				<div class="flex flex-row items-center gap-2 mb-2">
+
 					<div
 						class="rounded-lg bg-emerald-300 w-fit p-1 bg-lime-500 hover:bg-lime-400 transition shadow-lg"
 					>
@@ -330,7 +338,8 @@
 							/>
 						</svg>
 					</div>
-					<h5 class="text-xl dark:text-black">{$t('words.import')}</h5>
+					<h5 class="text-xl w-fit font-bold dark:text-black">{$t('words.import')}</h5>
+					</div>
 					<p class="dark:text-black">
 						{$t('index_page.import_quiz_from_kahoot_and_edit')}
 					</p>

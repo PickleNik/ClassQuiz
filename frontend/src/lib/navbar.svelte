@@ -43,12 +43,12 @@
 </script>
 
 <nav
-	class="w-screen px-4 lg:px-10 py-2 flex flex-col lg:flex-row lg:items-center fixed backdrop-blur-2xl bg-white/70 shadow-md z-30 top-0"
+	class="my-4 rounded-2xl px-4 lg:px-10 py-2 flex flex-col lg:flex-row lg:items-center fixed left-1/2 -translate-x-1/2 backdrop-blur-2xl bg-white/70 shadow-md z-30 top-0"
 >
 	<section class="w-full lg:w-max grid grid-cols-3 lg:grid-cols-2">
-		<a href="/" class="font-black tracking-tight text-xl text-black marck-script link-hover"
-			>ClassQuiz</a
-		>
+		<a href="/" class="font-black tracking-tight text-xl text-black marck-script link-hover mr-8">
+			ClassQuiz
+		</a>
 		<div class="flex justify-center">
 			<a
 				class="lg:pl-6 text-lg font-medium lg:px-4 text-gray-600 hover:text-green-600 link-hover"
@@ -182,9 +182,9 @@
 		class="justify-self-end gap-2 h-full flex justify-center items-center lg:relative fixed right-12 -top-1/2 pt-11 lg:right-0 lg:top-0 lg:p-0"
 	>
 		<div class="whitespace-nowrap hidden lg:block">
-			<BrownButton href="https://mawoka.eu/donate" target="_blank"
+			<!-- <BrownButton href="https://mawoka.eu/donate" target="_blank"
 				>Donate <span class="">❤️</span></BrownButton
-			>
+			> -->
 		</div>
 		{#if darkMode}
 			<button
