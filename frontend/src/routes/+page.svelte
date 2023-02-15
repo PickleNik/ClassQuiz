@@ -9,7 +9,6 @@
 	import Footer from '$lib/footer.svelte';
 	import WebPOpenGraph from '$lib/assets/landing/opengraph-home.webp';
 	import JpgOpenGraph from '$lib/assets/landing/opengraph-home.jpg';
-	import Newsletter from '$lib/landing/newsletter.svelte';
 	import { fly, fade } from 'svelte/transition';
 
 	/*	import LandingPromo from '$lib/landing/landing-promo.svelte';*/
@@ -35,11 +34,6 @@
 			const response = await fetch('/api/v1/stats/combined');
 			return await response.json();
 		};*/
-	let newsletterModalOpen;
-	onMount(() => {
-		const ls = localStorage.getItem('newsletter');
-		newsletterModalOpen = ls === null;
-	});
 
 	// eslint-disable-next-line no-unused-vars
 	enum SelectedCreateThing {
@@ -516,14 +510,6 @@
 		</div>
 	</section>
 </div>
-{#if newsletterModalOpen}
-	<div
-		class="fixed bottom-8 right-5 bg-white rounded-lg h-fit w-11/12 ml-5 lg:w-2/12 z-50 p-2 bg-white dark:bg-gray-700"
-		transition:fly
-	>
-		<Newsletter bind:open={newsletterModalOpen} />
-	</div>
-{/if}
 <Footer />
 
 <style>
