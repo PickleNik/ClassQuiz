@@ -13,19 +13,6 @@
 	import { browser } from '$app/environment';
 	import Alert from '$lib/modals/alert.svelte';
 
-	/*	afterNavigate(() => {
-		if (browser) {
-			if (latestPageVisitURl === window.location.href) {
-				return;
-			} else {
-				latestPageVisitURl = window.location.href;
-				plausible.trackPageview();
-			}
-			console.log('After nav');
-		}
-	});*/
-	const plausible_data_url = import.meta.env.VITE_PLAUSIBLE_DATA_URL;
-
 	if (browser) {
 		pathname.set(window.location.pathname);
 		if (
@@ -63,28 +50,9 @@
 	}
 </script>
 
-<svelte:head>
-	{#if plausible_data_url}
-		<link rel="prefetch" href="https://sugar.mawoka.eu.org/" />
-		<script
-			async=""
-			defer=""
-			data-domain={plausible_data_url}
-			src="https://sugar.mawoka.eu.org/js/plausible.hash.outbound-links.js"
-		></script>
-		<script>
-			window.plausible =
-				window.plausible ||
-				function () {
-					(window.plausible.q = window.plausible.q || []).push(arguments);
-				};
-		</script>
-	{/if}
-</svelte:head>
-
 {#if $navbarVisible}
 	<Navbar />
-	<div class="pt-16 h-screen">
+	<div class="pt-16">
 		<div class="z-40" />
 		<slot />
 	</div>
@@ -93,7 +61,7 @@
 {/if}
 {#if $alertModal.open}
 	<div
-		class="fixed inset-0 h-screen w-screen bg-black z-30 bg-opacity-60 flex items-center justify-center content-center"
+		class="fixed inset-0 bg-black z-30 bg-opacity-60 flex items-center justify-center content-center"
 	>
 		<Alert
 			bind:title={$alertModal.title}

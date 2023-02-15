@@ -10,7 +10,7 @@
 	const { t } = getLocalization();
 </script>
 
-<footer class="text-center text-white border-black w-screen">
+<footer class="text-center text-white border-black">
 	<div class="grid grid-cols-12 w-full pt-4 bg-gray-700 pb-2">
 		<p class="col-start-3 col-end-11 text-center w-full">
 			{@html $t('footer.self_ads', {

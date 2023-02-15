@@ -200,7 +200,7 @@
 		</div>
 	</section>
 </div>-->
-<div class="min-h-screen flex flex-col">
+<div class="flex flex-col">
 	<section class="pb-40">
 		<div class="pt-12 text-center">
 			<h1 class="sm:text-8xl text-6xl mt-6 marck-script">ClassQuiz</h1>
